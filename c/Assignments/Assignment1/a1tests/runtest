@@ -1,0 +1,14 @@
+#!/bin/bash
+
+echo "Delete data (records.txt) & output files from previous tests?"
+echo "Press ctl-c to abort, any other key to delete the files & run test"
+read x
+rm -f output.my records.txt
+
+./a1 < input > /dev/null 2> output.my
+cmp output output.my > /dev/null
+if [ $? -eq 0 ]; then
+  echo "Test passed"
+else
+  echo "TEST FAILED"
+fi

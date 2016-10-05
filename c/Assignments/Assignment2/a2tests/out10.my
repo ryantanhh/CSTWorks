@@ -1,0 +1,6 @@
+int main() { 
+^Iprintf("hello, world!\n);
+
+ 
+^Ireturn 0;
+}

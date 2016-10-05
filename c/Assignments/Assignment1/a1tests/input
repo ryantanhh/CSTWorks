@@ -1,0 +1,53 @@
+1                            # enter data
+simpson, homer               
+ 25 d                        --> record 1 - Simpson, Homer:  25  
+bart simpson                 
+ 200                         # invalid score
+ -15                         # invalid score
+ 45                          --> record 2 - Simpson, Bart:  45
+flanders , ned               
+90                           --> record 3 - Flanders, Ned:  90
+  monty BURNS                
+95                           --> record 4 - Burns, Monty:  95
+
+  smithers ,WAYLON           
+ 85                          --> record 5 - Smithers, Waylon:  85
+  simpson-flanders,lisa      --> invalid name
+  homer  j  simpson          
+   5                         --> record 6 - J, Homer:   5
+
+  a2b cde                    # invalid name
+  r   d2                     # invalid name
+  r,d2                       # invalid name
+ BOUVIER, Anne-MArie         
+   66                        --> record 7 - Bouvier, Anne-marie:  66
+Apu Nahasapeemapetilon       # invalid name
+ 50                          # invalid
+!x                           # invalid
+  ! x                        # back to main menu
+ 2  hello                    # display data
+1                            # display record 1 - Simpson, Homer:  25
+ 2                           # display record 2 - Simpson, Bart:  45
+ 5                           # display record 5 - Smithers, Waylon:  85
+7                            # display record 7 - Bouvier, Anne-marie:  66 
+10                           # display record 10 - no output
+0                            # back to main menu
+  1                          # enter more data
+
+simpson, lisa                
+100                          --> record 8 - Simpson, Lisa: 100
+  flanders ,, todd           # invalid
+
+ frank grimes jr            
+  15                         --> record 9 - Grimes, Frank:  15
+!                            # back to main menu
+2                            # display data
+ 3                           # display record 3 - Flanders, Ned:  90
+6                            # display record 6 - J, Homer:   5
+8                            # display record 8 - Simpson, Lisa: 100
+9                            # display record 9 - Grimes, Frank:  15
+11                           # no output
+4                            # display record 4 - Burns, Monty:  95
+ 0                           # back to main menu
+4                            # invalid choice
+ 3                           # quit 

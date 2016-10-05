@@ -1,0 +1,36 @@
+#!/bin/bash
+
+incorrect=0
+tests=0
+
+runtest() {
+  ((tests++))
+  bash -c "$1 > $2.my"
+  cmp $2 $2.my > /dev/null
+  if [ $? -eq 0 ]; then
+    printf "passed: "
+  else
+    ((incorrect++))
+    printf "FAILED: "
+  fi
+  printf "%s\n" "$1 > $2.my"
+}
+
+echo "Delete output files (my-out) from previous tests?"
+echo "Press ctl-c to abort, any other key to delete my-out files & run tests"
+read x
+rm -f *.my
+
+runtest "./csort 2600-3.txt" asc
+runtest "./csort -r 2600-3.txt" rev
+runtest "./csort -c 2600-3.txt" case
+runtest "./csort -c -r 2600-3.txt" case-rev
+runtest "./csort -w 2600-3.txt" ws
+runtest "./csort -w -r 2600-3.txt" ws-rev
+runtest "./csort -c -w 2600-3.txt" case-ws
+runtest "./csort -r -c -w 2600-3.txt" case-ws-rev
+runtest "./csort < 2600-3.txt" asc-stdin
+runtest "./csort 2600-3.txt 2600-3.txt" asc2
+runtest "./csort -c 2600-3.txt 2600-3.txt" case2
+echo
+echo "Failed $incorrect/$tests tests" 

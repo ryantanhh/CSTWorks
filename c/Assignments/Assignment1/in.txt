@@ -1,0 +1,70 @@
+isdf
+sfa
+    
+sdf
+1
+           Tan            ,        Hai-hua           
+	   100        
+       Lucas                 chan      
+
+
+98
+D2 M2
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa, bbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+100
+
+Song, Hugh
+-1
+1000
+90
+!
+2
+9
+8
+7
+6
+5
+4
+3
+2
+1
+0
+1
+          Albert               Wei                  
+100
+!
+2
+10
+9
+8
+7
+6
+5
+4
+3
+2
+1
+0
+1
+Harry porter
+d
+d
+eof
+Harry porter
+99
+!
+2
+9
+8
+7
+6
+5
+4
+3
+2
+1
+0
+3
+
+
+

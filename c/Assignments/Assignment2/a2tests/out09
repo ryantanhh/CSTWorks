@@ -1,0 +1,6 @@
+     1  int main() { $
+     2  	printf("hello, world!\n);$
+$
+     3   $
+     4  	return 0;$
+     5  }

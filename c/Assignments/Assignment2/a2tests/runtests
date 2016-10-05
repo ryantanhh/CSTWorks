@@ -1,0 +1,72 @@
+#!/bin/bash
+
+incorrect=0
+tests=0
+
+runtest() {
+  ((tests++))
+  bash -c "$1 > $2.my"
+  cmp $2 $2.my > /dev/null
+  if [ $? -eq 0 ]; then
+    printf "passed: "
+  else
+    ((incorrect++))
+    printf "FAILED: "
+  fi
+  printf "%s\n" "$1 > $2.my"
+}
+
+echo "Delete output files (my-out) from previous tests?"
+echo "Press ctl-c to abort, any other key to delete my-out files & run tests"
+read x
+rm -f out*.my
+
+echo "Running tests 1 -- 27"
+runtest "./concat -e data1" out01
+runtest "./concat -b data1" out02
+runtest "./concat -n data1" out03
+runtest "./concat -s -n data1" out04
+runtest "./concat -s -b data1" out05
+runtest "./concat -s -e -n  < data1" out06
+runtest "./concat -e data2" out07
+runtest "./concat -s -e data2" out08
+runtest "./concat -b -e data2" out09
+runtest "./concat -t data2" out10
+runtest "./concat -n data2 data1" out11
+runtest "./concat -s -e  data1 data2" out12
+runtest "./concat -n data3 data4" out13
+runtest "./concat -n -t data3 data4" out14
+runtest "./concat -e data3 data4" out15
+runtest "./concat -b data3 data4" out16
+runtest "./concat -s data3 data4" out17
+runtest "./concat -s -e data3 data4" out18
+runtest "./concat -s -e -n data4 data3" out19
+runtest "./concat -s -e -b data4 data3" out20
+runtest "./concat -b -n data3" out21
+runtest "./concat -n -b data3" out22
+runtest "./concat < data3" out23 
+runtest "./concat -n -s < data3" out24
+runtest "./concat -b -s < data3" out25
+runtest "./concat -- -h" out26
+runtest "./concat -n -- -h" out27
+
+echo
+echo "Failed $incorrect/$tests tests" 
+
+echo
+echo "The following 3 tests may fail. If so, compare output visually"  
+./concat -b -h data3 > out28.my
+./concat -x -h 2> out29.my
+./concat -help 2> out30.my
+
+for i in 28 29 30
+do
+  cmp out$i out$i.my > /dev/null
+  if [ $? -eq 0 ]; then
+    printf "passed: "
+  else
+    printf "FAILED: "
+  fi
+  printf "%s\n" "test$i"
+done  
+
