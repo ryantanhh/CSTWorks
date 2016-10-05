@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="6.10">
+<file name="D:\Git\COMP1510-assign-3\src\q1\PalindromeTester.java">
+</file>
+<file name="D:\Git\COMP1510-assign-3\src\q2\RockPaperScissors.java">
+</file>
+<file name="D:\Git\COMP1510-assign-3\src\q3\Address.java">
+</file>
+<file name="D:\Git\COMP1510-assign-3\src\q3\Student.java">
+</file>
+<file name="D:\Git\COMP1510-assign-3\src\q3\TestConstructorData.java">
+</file>
+<file name="D:\Git\COMP1510-assign-3\src\q3\TestData.java">
+</file>
+<file name="D:\Git\COMP1510-assign-3\src\q3\TestGetSetScoreData.java">
+</file>
+<file name="D:\Git\COMP1510-assign-3\src\q3\TestStudent.java">
+</file>
+<file name="D:\Git\COMP1510-assign-3\src\q4\Primes.java">
+</file>
+</checkstyle>
